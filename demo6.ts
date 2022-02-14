@@ -53,3 +53,65 @@ const listArr:interfaceParam[]= [
         age:16
     }
 ]
+
+
+// 接口的方法
+interface metodsInterFace {
+    name:string;
+    age:number;
+    say():string;
+}
+const getMethods = (val:metodsInterFace):void =>{
+    console.log(val.name,val.age,val.say())
+}
+
+const newParam = {
+    name:'xiaobai',
+    age:16,
+    say(){
+     return '哈哈,笑死我了'
+    }
+}
+
+getMethods(newParam)
+
+
+// 接口的继承
+
+// 类的继承
+
+class childrenClass implements metodsInterFace {
+    name="我是子类";
+    age=18;
+    say(){
+        return '我是测试'
+    };
+    demo:18
+}
+
+console.log('子类',childrenClass)
+
+// 接口间的继承
+interface childInter extends metodsInterFace {
+    teach():string
+}
+
+const demo:childInter = 
+    {
+      name:'hah',  
+      age:16,
+      say(){
+          return '接口继承类'
+      },
+      teach(){
+          return '返回teach'
+      }
+    }
+
+console.log('demo',demo,demo.say(),demo.teach())
+
+// 总结
+
+// typescript 类可以实现接口,但是接口不能继承类  接口可以继承接口,接口可以继承类, 类可以继承类 类和接口的关系是多对多的关系 
+// 类对类是一对一的关系
+
